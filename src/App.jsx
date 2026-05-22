@@ -1,10 +1,9 @@
+import RoutApp from "./routes"
 
 function App() {
 
   return (
-    <div>
-      
-    </div>
+    <RoutApp/>
   )
 }
 
