@@ -2,6 +2,7 @@ import "./filme.css"
 import { useState, useEffect } from "react"
 import Api from "../../service/api"
 import { useParams } from "react-router-dom"
+import { toast } from "react-toastify"
 
 const Detalhes = () => {
 
@@ -39,14 +40,14 @@ const Detalhes = () => {
         )
         
         if(verifivarFilme){
-            alert("Ess filme Já foi salvo")
+            toast.warn("Ess filme Já foi salvo")
             return
         }
 
         filmesSalvos.push(filme)
         
         localStorage.setItem("@cinecatalogo", JSON.stringify(filmesSalvos))
-        alert("filme Salvo com Sucesso")
+        toast.success("filme Salvo com Sucesso")
         
 
     }

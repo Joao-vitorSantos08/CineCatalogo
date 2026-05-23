@@ -40,3 +40,16 @@ article h1 {
     border-bottom-left-radius: 13px;
     border-bottom-right-radius: 13px;
 }
+
+.loading{
+    font-size: 50px;
+    font-weight: bold;
+    position: absolute;
+}
+
+.loading{
+    left: 45%;
+    right: 55%;
+    top: 15%;
+
+}

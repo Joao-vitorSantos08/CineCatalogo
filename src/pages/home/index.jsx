@@ -8,6 +8,8 @@ const Home = () => {
 
     const [filmes, setFilmes] = useState([])
 
+    const [loading, setLoading] = useState(true)
+
     useEffect(() => {
         async function loadFilmes() {
             const response = await Api.get("/movie/now_playing", {
@@ -18,6 +20,7 @@ const Home = () => {
                 }
             })
             setFilmes(response.data.results)
+            setLoading(false)
         }
 
         loadFilmes()
@@ -25,7 +28,9 @@ const Home = () => {
     }, [])
 
     return (
+
         <div className="filmes">
+
             {filmes.map((filme) => (
                 <article key={filme.id}>
                     <img src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`} title={filme.title} />
@@ -34,7 +39,7 @@ const Home = () => {
                 </article>
 
             ))}
-
+            <p className="loading">{loading === true ? "Carregando..." : ""}</p>
 
         </div>
 
