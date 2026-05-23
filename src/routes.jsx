@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "./pages/home"
 import Detalhes from "./pages/filme"
 import Header from "./components/header"
+import Favoritos from "./pages/favoritos"
 
 const RoutApp = () => {
     return (
@@ -10,6 +11,7 @@ const RoutApp = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/filme/:id" element={<Detalhes />} />
+                <Route path="/favorito" element={ <Favoritos/>} />
 
             </Routes>
         </BrowserRouter>

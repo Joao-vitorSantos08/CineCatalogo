@@ -1,0 +1,55 @@
+.container{
+    width: 100%;
+    padding: 50px 20px;
+}
+
+.container ul{
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-img{
+    height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.container li{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #fff;
+    background-color: #1e1e1e;
+    padding: 10px ;
+    border-radius: 10px;
+}
+
+.container li p{
+    width: 100%;
+}
+
+.container li a,
+.container li button{
+    text-decoration: none;
+    padding: 8px 20px;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+.container li a{
+    background-color: #fff;
+    color: #000;
+}
+
+.container li button{
+    background-color: crimson;
+    color: #fff;
+}
