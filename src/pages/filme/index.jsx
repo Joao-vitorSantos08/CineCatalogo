@@ -8,6 +8,7 @@ const Detalhes = () => {
 
     const { id } = useParams()
     const [filme, setFilmes] = useState({})
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         async function loadfilme() {
@@ -21,6 +22,7 @@ const Detalhes = () => {
                 .then((res) => {
                     setFilmes(res.data)
                     console.log(res.data)
+                    setLoading(false)
                 })
         }
 
@@ -38,17 +40,17 @@ const Detalhes = () => {
         const verifivarFilme = filmesSalvos.some(
             (filmeSalvo) => filmeSalvo.id === filme.id
         )
-        
-        if(verifivarFilme){
+
+        if (verifivarFilme) {
             toast.warn("Ess filme Já foi salvo")
             return
         }
 
         filmesSalvos.push(filme)
-        
+
         localStorage.setItem("@cinecatalogo", JSON.stringify(filmesSalvos))
         toast.success("filme Salvo com Sucesso")
-        
+
 
     }
 
@@ -72,6 +74,7 @@ const Detalhes = () => {
                 </div>
 
             </div>
+            <p className="loading">{loading === true ? "Carregando..." : ""}</p>
         </main>
     )
 }
