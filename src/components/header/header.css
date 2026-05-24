@@ -1,16 +1,25 @@
-header{
+header {
+    visibility: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px;
+    padding: 60px;
     background-color: #032541;
     color: #fff;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 40px;
+    color: #fff;
+    font-weight: bold;
 }
 
 .link {
     text-decoration: none;
     color: #fff;
-    background-color: rgb(19, 19, 231);
+    background-color: #032541;
+    box-shadow: 0px 1px 5px 1px white;
     padding: 10px 30px;
     border: none;
     border-radius: 5px;

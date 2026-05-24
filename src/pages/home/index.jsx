@@ -27,21 +27,33 @@ const Home = () => {
 
     }, [])
 
+    const formatReleaseDate = (dateString) => {
+        if (!dateString) return '';
+        const dateObj = new Date(dateString + 'T00:00:00');
+
+        return new Intl.DateTimeFormat('pt-BR', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+        }).format(dateObj);
+    };
+
     return (
 
-        <div className="filmes">
+        <main className="filmes">
 
             {filmes.map((filme) => (
                 <article key={filme.id}>
                     <img src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`} title={filme.title} />
                     <h1>{filme.title}</h1>
+                      <p className="data">{formatReleaseDate(filme.release_date)}</p>
                     <Link className="btn" to={`/filme/${filme.id}`}> Ver detalhes</Link>
                 </article>
 
             ))}
             <p className="loading">{loading === true ? "Carregando..." : ""}</p>
+        </main>
 
-        </div>
 
 
     )

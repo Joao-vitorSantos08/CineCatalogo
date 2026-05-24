@@ -1,55 +1,53 @@
-.container{
+main {
     width: 100%;
-    padding: 50px 20px;
 }
 
-.container ul{
-    max-width: 700px;
-    width: 100%;
-    margin: 0 auto;
-
+.card-filme {
+    width: 700px;
+    margin:  0 auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.main-img{
-    height: 200px;
-    object-fit: contain;
-    border-radius: 8px;
-}
-
-.container li{
+.card-filme li {
     display: flex;
     align-items: center;
     gap: 20px;
-    color: #fff;
-    background-color: #1e1e1e;
-    padding: 10px ;
-    border-radius: 10px;
-}
-
-.container li p{
-    width: 100%;
-}
-
-.container li a,
-.container li button{
-    text-decoration: none;
-    padding: 8px 20px;
-
-    border: none;
-    border-radius: 6px;
-
-    cursor: pointer;
-}
-
-.container li a{
     background-color: #fff;
-    color: #000;
+    box-shadow: 0px 2px 3px gray;
+    border-radius: 20px;
 }
 
-.container li button{
-    background-color: crimson;
+.card-filme img {
+    height: 200px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    object-fit: contain;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+}
+
+.filme-info p {
+    font-size: 16px;
+    
+}
+
+.info button,
+.info a{
+    text-decoration: none;
+    background-color: #032541;
     color: #fff;
+    padding: 5px 25px;
+    border: none;
+    border-radius: 20px;
+    margin: 0px 20px ;
+}
+
+.info button{
+    background-color: red;
 }

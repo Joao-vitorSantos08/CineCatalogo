@@ -57,23 +57,28 @@ const Detalhes = () => {
 
 
     return (
-        <main className="container">
+        <main>
 
-            <h1>{filme.title}</h1>
-            <img src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`} title={filme.title} />
+            <div className="container">
 
-            <div className="filme-info">
 
-                <p>{filme.overview}</p>
-                <span>Avaliação: {filme.vote_average
-                } / 10</span>
+                <img src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`} title={filme.title} />
 
-                <div className="buttons">
-                    <button onClick={salvar}>Salvar</button>
-                    <a target="black" href={`https://www.youtube.com/results?search_query=${filme.title} Trailer`}>Trailer</a>
+
+                <div className="filme-info">
+                    <h1><strong>{filme.title}</strong></h1>
+                    <h2>Sinopse</h2>
+                    <p>{filme.overview}</p>
+                    <span>Avaliação: {(filme.vote_average || 0).toFixed(1)} / 10</span>
+                    <div className="buttons">
+                        <button onClick={salvar}>Salvar</button>
+                        <a target="black" href={`https://www.youtube.com/results?search_query=${filme.title} Trailer`}>Trailer</a>
+
+                    </div>
+
                 </div>
-
             </div>
+
             <p className="loading">{loading === true ? "Carregando..." : ""}</p>
         </main>
     )

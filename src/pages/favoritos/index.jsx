@@ -26,17 +26,19 @@ const Favoritos = () => {
     }
 
     return (
-        <main className="container">
-            <ul>
+        <main>
+            <ul className="card-filme">
                 {filmes.map((filme) => (
                     <li key={filme.id}>
 
-                        <img className="main-img" src={`https://image.tmdb.org/t/p/original/${filme.poster_path
+                        <img className="main-img" src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`} title={filme.title} />
 
-}`} title={filme.title}/>
-                        <p>{filme.title} </p>
-                        <Link to={`/filme/${filme.id}`}>Detalhes</Link>
-                        <button onClick={() => remover(filme.id)}>Remover</button>
+                        <div className="info">
+                            <p>{filme.title} </p>
+                            <Link to={`/filme/${filme.id}`}>Detalhes</Link>
+                            <button onClick={() => remover(filme.id)}>Remover</button>
+                        </div>
+
                     </li>
 
                 ))}
