@@ -27,6 +27,8 @@ const Favoritos = () => {
 
     return (
         <main>
+            <h1>{filmes != "" ? "" : "Sua lista está vazia. Que tal adicionar alguns filmes?"} </h1>
+
             <ul className="card-filme">
                 {filmes.map((filme) => (
                     <li key={filme.id}>
@@ -43,7 +45,6 @@ const Favoritos = () => {
 
                 ))}
             </ul>
-
         </main>
     )
 }

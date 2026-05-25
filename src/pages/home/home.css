@@ -1,6 +1,28 @@
 main {
     width: 100%;
+    margin:  0 auto;
     padding-top: 40px;
+    position: relative;
+}
+
+.btn-more-movies{
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin:  0 auto;
+    background-color: #032541;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.lista-vazia{
+    opacity: 0;
 }
 
 .filmes {
@@ -10,6 +32,7 @@ main {
     text-align: center;
     grid-template-columns: repeat(4, 1fr);
     gap: 50px;
+    padding: 40px 20px 100px;
 }
 
 .filmes article {

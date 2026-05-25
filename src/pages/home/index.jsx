@@ -10,13 +10,15 @@ const Home = () => {
 
     const [loading, setLoading] = useState(true)
 
+    const [pagina, setPagina] = useState(1)
+
     useEffect(() => {
         async function loadFilmes() {
             const response = await Api.get("/movie/now_playing", {
                 params: {
                     api_key: import.meta.env.VITE_API_KEY,
                     language: "pt-BR",
-                    page: 1,
+                    page: pagina,
                 }
             })
             setFilmes(response.data.results)
@@ -25,7 +27,7 @@ const Home = () => {
 
         loadFilmes()
 
-    }, [])
+    }, [pagina])
 
     const formatReleaseDate = (dateString) => {
         if (!dateString) return '';
@@ -37,6 +39,12 @@ const Home = () => {
             year: 'numeric',
         }).format(dateObj);
     };
+
+    const btn_more_movies = () => {
+        setPagina(pagina + 1)
+        console.log(pagina)
+
+    }
 
     return (
 
@@ -54,6 +62,11 @@ const Home = () => {
 
             ))}
             <p className="loading">{loading === true ? "Carregando..." : ""}</p>
+            {filmes.length > 0 && (
+                <button onClick={btn_more_movies} className="btn-more-movies">
+                    Carregar mais filmes
+                </button>
+            )}
         </main>
 
 
