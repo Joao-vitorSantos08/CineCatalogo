@@ -6,12 +6,13 @@
  <a href="#-sobre-o-projeto">Sobre</a> •
  <a href="#-funcionalidades">Funcionalidades</a> •
  <a href="#-layout">Layout</a> • 
- <a href="#Acesse_o_Site_Online">Acesse o Site Online</a> • 
+ <a href="#acesse-o-site-online">Acesse o Site Online</a> • 
  <a href="#tecnologias">Tecnologias</a> • 
-	<a href="#O_que_pratiquei"> O que pratiquei</a> • 
+ <a href="#o-que-pratiquei">O que pratiquei</a> • 
  <a href="#-autor">Autor</a> • 
- <a href="#user-content--licença">Licença</a>
+ <a href="#-licença">Licença</a>
 </p>
+
 
 
 ##  Descrição do entregável
