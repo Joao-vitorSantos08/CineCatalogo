@@ -1,8 +1,9 @@
-import "./filme.css"
 import { useState, useEffect } from "react"
 import Api from "../../service/api"
 import { useParams } from "react-router-dom"
 import { toast } from "react-toastify"
+import "./filme.css"
+
 
 const Detalhes = () => {
 

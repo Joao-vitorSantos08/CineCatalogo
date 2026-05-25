@@ -1,9 +1,9 @@
 header {
-    visibility: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 60px;
+    padding: 40px;
     background-color: #032541;
     color: #fff;
 }

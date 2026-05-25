@@ -45,9 +45,11 @@ const Home = () => {
             {filmes.map((filme) => (
                 <article key={filme.id}>
                     <img src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`} title={filme.title} />
-                    <h1>{filme.title}</h1>
-                      <p className="data">{formatReleaseDate(filme.release_date)}</p>
-                    <Link className="btn" to={`/filme/${filme.id}`}> Ver detalhes</Link>
+                    <div className="card-info">
+                        <h1>{filme.title}</h1>
+                        <p className="data">{formatReleaseDate(filme.release_date)}</p>
+                        <Link className="btn" to={`/filme/${filme.id}`}> Ver detalhes</Link>
+                    </div>
                 </article>
 
             ))}

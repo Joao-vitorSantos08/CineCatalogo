@@ -1,14 +1,16 @@
 main {
     width: 100%;
+    height: 100%;
 }
 
 .card-filme {
     width: 700px;
-    margin:  0 auto;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
+
 
 .card-filme li {
     display: flex;
@@ -17,6 +19,11 @@ main {
     background-color: #fff;
     box-shadow: 0px 2px 3px gray;
     border-radius: 20px;
+    transition: all 0.5s;
+}
+
+.card-filme li:hover {
+    transform: translateX(10px);
 }
 
 .card-filme img {
@@ -34,20 +41,47 @@ main {
 
 .filme-info p {
     font-size: 16px;
-    
+
 }
 
 .info button,
-.info a{
+.info a {
     text-decoration: none;
     background-color: #032541;
     color: #fff;
     padding: 5px 25px;
     border: none;
     border-radius: 20px;
-    margin: 0px 20px ;
+    margin: 0px 20px;
 }
 
-.info button{
+.info button {
     background-color: red;
+}
+
+
+@media (max-width: 577px) {
+
+    .card-filme {
+        width: 400px;
+
+    }
+
+    .info {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 25px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info p {
+
+        width: 170px;
+        margin: 0 auto;
+    }
+
+
+
 }
