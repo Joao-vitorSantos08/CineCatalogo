@@ -4,6 +4,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 40px;
+    gap: 10px;
     background-color: #032541;
     color: #fff;
 }
@@ -23,4 +24,18 @@ header {
     padding: 10px 30px;
     border: none;
     border-radius: 5px;
+}
+
+
+@media (max-width: 576px) {
+    .logo{
+        
+        font-size: 23px;
+    }
+
+    .link{
+        font-size: 11px;
+        padding: 10px 20px;
+    }
+
 }

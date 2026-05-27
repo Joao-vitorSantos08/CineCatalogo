@@ -60,10 +60,10 @@ const Home = () => {
 
         <div>
 
-            <div className="input">
-                <input value={buscar} type="text"
-                    placeholder="Pesquisar filme" onChange={e => setBusca(e.target.value)} />
-            </div>
+
+            <input className="input" value={buscar} type="text"
+                placeholder="Pesquisar filme" onChange={e => setBusca(e.target.value)} />
+
 
             <main className="filmes">
 

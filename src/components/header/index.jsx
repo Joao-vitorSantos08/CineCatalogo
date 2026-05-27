@@ -6,6 +6,7 @@ const Header = () => {
         <header>
             <Link className="logo" to={"/"}>CineCatálogo</Link>
             <Link className="link" to={"/favorito"}>Meus favoritos</Link>
+            
         </header>
     )
 }
