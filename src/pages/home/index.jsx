@@ -12,6 +12,8 @@ const Home = () => {
 
     const [pagina, setPagina] = useState(1)
 
+    const [buscar, setBusca] = useState("")
+
     useEffect(() => {
         async function loadFilmes() {
             const response = await Api.get("/movie/now_playing", {
@@ -46,30 +48,46 @@ const Home = () => {
 
     }
 
+    const filtrarFilme = filmes.filter((filme) =>
+        filme.title
+            .toLowerCase()
+            .includes(buscar.toLowerCase()))
+
+
+
+
     return (
 
-        <main className="filmes">
+        <div>
 
-            {filmes.map((filme) => (
-                <article key={filme.id}>
-                    <img src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`} title={filme.title} />
-                    <div className="card-info">
-                        <h1>{filme.title}</h1>
-                        <p className="data">{formatReleaseDate(filme.release_date)}</p>
-                        <Link className="btn" to={`/filme/${filme.id}`}> Ver detalhes</Link>
-                    </div>
-                </article>
+            <div className="input">
+                <input value={buscar} type="text"
+                    placeholder="Pesquisar filme" onChange={e => setBusca(e.target.value)} />
+            </div>
 
-            ))}
-            <p className="loading">{loading === true ? "Carregando..." : ""}</p>
-            {filmes.length > 0 && (
-                <button onClick={btn_more_movies} className="btn-more-movies">
-                    Carregar mais filmes
-                </button>
-            )}
-        </main>
+            <main className="filmes">
+
+                {filtrarFilme.map((filme) => (
+                    <article key={filme.id}>
+                        <img src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`} title={filme.title} />
+                        <div className="card-info">
+                            <h1>{filme.title}</h1>
+                            <p className="data">{formatReleaseDate(filme.release_date)}</p>
+                            <Link className="btn" to={`/filme/${filme.id}`}> Ver detalhes</Link>
+                        </div>
+                    </article>
+
+                ))}
+                <p className="loading">{loading === true ? "Carregando..." : ""}</p>
+                {filmes.length > 0 && (
+                    <button onClick={btn_more_movies} className="btn-more-movies">
+                        Carregar mais filmes
+                    </button>
+                )}
+            </main>
 
 
+        </div>
 
     )
 }

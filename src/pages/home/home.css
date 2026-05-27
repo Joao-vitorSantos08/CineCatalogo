@@ -1,16 +1,31 @@
+.input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 15px;
+}
+
+.input input{
+    padding: 5px 100px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
 main {
     width: 100%;
-    margin:  0 auto;
+    margin: 0 auto;
     padding-top: 40px;
     position: relative;
 }
 
-.btn-more-movies{
+.btn-more-movies {
     position: absolute;
     bottom: 0%;
     left: 50%;
     transform: translateX(-50%);
-    margin:  0 auto;
+    margin: 0 auto;
     background-color: #032541;
     color: #fff;
     text-align: center;
@@ -21,7 +36,7 @@ main {
     font-size: 20px;
 }
 
-.lista-vazia{
+.lista-vazia {
     opacity: 0;
 }
 
