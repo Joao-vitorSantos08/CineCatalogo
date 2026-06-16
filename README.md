@@ -15,7 +15,7 @@
 
 
 
-##  Descrição do entregável
+##  Sobre o Projeto
 
 Projeto desenvolvido em React consumindo a API do TMDB para listar filmes em cartaz, visualizar detalhes e salvar favoritos.
 
