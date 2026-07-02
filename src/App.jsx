@@ -1,4 +1,4 @@
-import RoutApp from "./routes"
+import RoutApp from './routes/routes'
 import { ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css"
 

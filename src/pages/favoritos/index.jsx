@@ -8,10 +8,13 @@ const Favoritos = () => {
     const [filmes, setFilmes] = useState([])
 
 
-
     useEffect(() => {
-        const minhalista = localStorage.getItem("@cinecatalogo")
-        setFilmes(JSON.parse(minhalista) || [])
+        const verificar = () => {
+            const minhalista = localStorage.getItem("@cinecatalogo")
+            setFilmes(JSON.parse(minhalista) || [])
+        }
+
+        verificar()
 
     }, [])
 
