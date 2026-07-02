@@ -34,7 +34,7 @@ Projeto desenvolvido em React consumindo a API do TMDB para listar filmes em car
 
 Você pode visualizar o projeto diretamente no navegador sem precisar baixar:
 
-➡️ [Clique aqui para acessar](https://cine-catalogo-psi.vercel.app/) 
+➡️ [Clique aqui para acessar](https://cine-catalogo-phi.vercel.app/) 
 
 
 ## Tecnologias
