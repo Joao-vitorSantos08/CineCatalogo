@@ -12,17 +12,27 @@ const Register = () => {
 
     const navigate = useNavigate()
 
+    const [erropassword, setErroPassword] = useState("")
+
+
     const handleRegister = async (e) => {
         e.preventDefault()
         if (email === "" && password === "") {
             alert("Preemcha todos os campos")
         }
-        await createUserWithEmailAndPassword(auth, email, password)
-        alert("Usuário cadastrado")
-        navigate("/home")
+        try {
+            await createUserWithEmailAndPassword(auth, email, password)
+            alert("Usuário cadastrado")
+            navigate("/home")
 
-        setEmail("")
-        setPassword("")
+            setEmail("")
+            setPassword("")
+        } catch (error) {
+            if (password.length < 6) {
+                setErroPassword("Senha muito curta. A senha deve ter pelo menos 6 dígitos")
+                console.log(error)
+            }
+        }
 
 
     }
@@ -36,7 +46,11 @@ const Register = () => {
                 <input value={email} type="email" placeholder="Digite seu email..." onChange={(e) => setEmail(e.target.value)} />
 
                 <input value={password} type="password" placeholder="Digite sua senha" onChange={(e) => setPassword(e.target.value)} />
-
+                {erropassword && (
+                    <span style={{ color: 'red', fontSize: '12px', marginTop: '4px' }}>
+                        {erropassword}
+                    </span>
+                )}
                 <button type="submit">Cadastrar</button>
 
             </form>

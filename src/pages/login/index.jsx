@@ -8,6 +8,7 @@ const Login = () => {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [erroUsuario, setErroUsuario] = useState("")
 
     const navigate = useNavigate()
 
@@ -20,11 +21,10 @@ const Login = () => {
         try {
 
             await signInWithEmailAndPassword(auth, email, password)
-            alert("Login feito com sucesso!")
             navigate("/home")
         } catch (error) {
-            if (error.code === "auth/invalid-credential" || error.code === "auth/wrong-password") {
-                alert("Senha inválida ou usuário incorreto.");
+            if (error.code === "auth/invalid-credential") {
+                setErroUsuario("Senha inválida ou usuário incorreto.");
             }
 
         }
@@ -41,6 +41,11 @@ const Login = () => {
                     <input value={email} type="email" placeholder="Digite seu email..." onChange={(e) => setEmail(e.target.value)} />
 
                     <input value={password} type="password" placeholder="Digite sua senha" onChange={(e) => setPassword(e.target.value)} />
+                    {erroUsuario && (
+                        <span style={{ color: 'red', fontSize: '12px', marginTop: '4px' }}>
+                            {erroUsuario}
+                        </span>
+                    )}
 
                     <button type="submit">Entrar</button>
 
