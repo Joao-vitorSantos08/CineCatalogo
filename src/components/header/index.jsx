@@ -14,7 +14,7 @@ const Header = () => {
 
     return (
         <header>
-            <Link className="logo" to={"/"}>CineCatálogo</Link>
+            <Link className="logo" to={"/home"}>CineCatálogo</Link>
             <div className="container">
                 <Link className="link" to={"/favorito"}>Meus favoritos</Link>
                 <div className="perfil">

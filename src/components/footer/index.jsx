@@ -4,7 +4,7 @@ import "./footer.css"
 const Footer = () => {
     return (
         <footer className="footer">
-            <Link to="/" className="footer-logo">CineCatálogo</Link>
+            <Link to="/home" className="footer-logo">CineCatálogo</Link>
 
             <p className="footer-text">
                 © {new Date().getFullYear()} Todos os direitos reservados.
