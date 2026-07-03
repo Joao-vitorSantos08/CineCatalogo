@@ -1,9 +1,10 @@
+import "./filme.css"
 import { useState, useEffect } from "react"
 import Api from "../../service/api"
 import { useParams } from "react-router-dom"
 import { toast } from "react-toastify"
-import "./filme.css"
-
+import { DB } from "../../service/firebase"
+import { collection, addDoc, query, where, getDocs} from "firebase/firestore"
 
 const Detalhes = () => {
 
@@ -32,30 +33,34 @@ const Detalhes = () => {
     }, [id])
 
 
-    const salvar = () => {
+    const salvar = async () => {
+        const user = JSON.parse(localStorage.getItem("@detailUser"));
+        const consulta = query(
+            collection(DB, "Coleção do usuário"),
+            where("uid", "==", user.uid),
+            where("id", "==", filme.id)
+        );
 
-        const minhaLista = localStorage.getItem("@cinecatalogo")
+        const snapshot = await getDocs(consulta);
 
-        let filmesSalvos = JSON.parse(minhaLista) || []
-
-        const verifivarFilme = filmesSalvos.some(
-            (filmeSalvo) => filmeSalvo.id === filme.id
-        )
-
-        if (verifivarFilme) {
-            toast.warn("Ess filme Já foi salvo")
-            return
+        if (!snapshot.empty) {
+            toast.warn("Esse filme já foi salvo.");
+            return;
+        }
+        try {
+            await addDoc(collection(DB, "Coleção do usuário"), {
+                uid: user.uid,
+                email: user.email,
+                titulo: filme.title,
+                poster_path: filme.poster_path,
+                id: filme.id
+            })
+            toast.success("filme Salvo com Sucesso")
+        } catch (error) {
+            console.log(error)
         }
 
-        filmesSalvos.push(filme)
-
-        localStorage.setItem("@cinecatalogo", JSON.stringify(filmesSalvos))
-        toast.success("filme Salvo com Sucesso")
-
-
     }
-
-
 
     return (
         <main>
